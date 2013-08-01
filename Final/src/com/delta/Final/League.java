@@ -29,17 +29,26 @@ Button b;
 Handler mainHandler;
 String[] teams={"MyTeam","Arsenal","Chelsea","Liverpool","ManCity","ManUtd"};
 int[] imageId={0,R.drawable.arsenal,R.drawable.chelsea,R.drawable.liverpool,R.drawable.mancity,R.drawable.manutd};
+int[][] level={	
+				{0,1,0,1,1,0,1,0,2,2},
+				{0,0,1,1,1,2,2,2,3,3},
+				{0,1,4,2,2,3,3,3,1,4},
+				{3,1,1,2,2,3,0,4,4,5},
+				{5,3,2,0,3,1,4,4,5,5},
+				{4,3,1,3,2,4,4,4,5,6}
+			};
 int t1,t2,i,j,id1,id2,balance;
 Random r=new Random();
 ManagerDatabase manager;
 Team t[]=new Team[6];
 PlayerDatabase info[]=new PlayerDatabase[6];
 String[] standings=new String[7];
-String team1,team2;
+String team1,team2,T2,T1;
 Object obj=new Object();
 boolean newSeason=false;
 boolean mPaused=false;
 SharedPreferences prefs;
+SharedPreferences.Editor editor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +59,8 @@ SharedPreferences prefs;
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.league);
 		prefs = getSharedPreferences("MyPrefs", 0);
+		editor=prefs.edit();
+		
 		imageId[0]=prefs.getInt("customId", R.drawable.barca);
 		manager=new ManagerDatabase(this);
 		manager.open();
@@ -111,10 +122,10 @@ SharedPreferences prefs;
 									id2=t[j].getImageId();
 									iv1.setBackgroundResource(id1);
 									iv2.setBackgroundResource(id2);
-									t1=r.nextInt(t[i].getMax());
-									t2=r.nextInt(t[j].getMax());
+									t1=t[i].getMax(r.nextInt(10));
+									t2=t[j].getMax(r.nextInt(10));
 									tv.setText(t1+" : "+t2);
-									Log.d("Score",t[i].getMax()+" "+t[i].ovr+" "+t[j].getMax()+" "+t[j].ovr);
+									//Log.d("Score",t[i].getMax()+" "+t[i].ovr+" "+t[j].getMax()+" "+t[j].ovr);
 									if(t1>t2){
 										t[i].incGamesWon();
 										t[i].incPoints(3);
@@ -159,6 +170,7 @@ SharedPreferences prefs;
 										manager.insertData("Harish",balance , t[0].win, t[0].loss, t[0].draw);
 										Toast.makeText(League.this, manager.getData(), Toast.LENGTH_LONG).show();
 										balance=Integer.parseInt(manager.getBal("Harish"));
+										
 										manager.close();
 										tv.setText("");
 										tvNextMatch.setText("CHAMPIONS!!!");
@@ -252,7 +264,8 @@ SharedPreferences prefs;
 	private class Team{
 		private String name;
 		public float ovr;
-		private int gp,gs,ga,win,loss,draw,maxRand;
+		private int gp,gs,ga,win,loss,draw;
+		int[] maxRand=new int[10];
 		int ImageId,pos;
 		public int pts;
 		public Team(String team, int imageId){
@@ -289,20 +302,20 @@ SharedPreferences prefs;
 		}
 		public void setMax(){
 			if(ovr<80)
-				maxRand=2;
+				maxRand=level[0];
 			else if(ovr>=80 && ovr<82)
-				maxRand=4;
+				maxRand=level[1];
 			else if(ovr>=82 && ovr<85)
-				maxRand=5;
+				maxRand=level[2];
 			else if(ovr>=85 && ovr<87)
-				maxRand=6;
+				maxRand=level[3];
 			else if(ovr>=87 && ovr<89)
-				maxRand=7;
+				maxRand=level[4];
 			else
-				maxRand=8;
+				maxRand=level[5];
 		}
-		public int getMax(){
-			return maxRand;
+		public int getMax(int i){
+			return maxRand[i];
 		}
 		
 		public String getData(){
@@ -327,9 +340,14 @@ SharedPreferences prefs;
 			startActivity(intent);
 		}
 		else{
-			intent.setClass(League.this, ChoosePlayers.class);
-			intent.putExtra("season", "end");
-			intent.putExtra("balance", balance);
+			//intent.setClass(League.this, ChoosePlayers.class);
+			//intent.putExtra("season", "end");
+			//intent.putExtra("balance", balance);
+			intent.setClass(League.this, Knockout.class);
+			intent.putExtra("team1", t[0].name);
+			intent.putExtra("team2", t[1].name);
+			intent.putExtra("id1", t[0].ImageId);
+			intent.putExtra("id2", t[1].ImageId);
 			startActivity(intent);
 			finish();
 		}

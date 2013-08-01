@@ -1,7 +1,5 @@
 package com.delta.Final;
 
-import com.delta.Final.R.id;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,24 +24,42 @@ ImageView ivIntro;
 ProgressBar pb;
 boolean endIntro=false;
 AnimationDrawable frameAnimation;
-String[] teams={"Arsenal","Chelsea","Liverpool","ManCity","ManUtd"};
+String[] teams={"Arsenal","Chelsea","Liverpool","ManCity","ManUtd","Barcelona","RealMadrid","BMunich","BDortmund","PSG","Juventus"};
 String[][] pos={
 				{"G","D","D","D","D","M","M","M","A","A","A"},
 				{"G","D","D","D","D","M","M","M","A","A","A"},
 				{"G","D","D","D","D","M","M","M","A","A","A"},
 				{"G","D","D","D","D","M","M","M","A","A","A"},
 				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"},
+				{"G","D","D","D","D","M","M","M","A","A","A"}
 			   };
 String[][] name={
 				{"Sczcezny","Gibbs","Mertesacker","Vermaelen","Sagna","Arteta","Wilshere","Cazorla","Walcott","Giroud","Podolski"},
 				{"Cech","Luiz","Terry","Ivanovic","Cole","Hazard","Mata","Lampard","Ramires","Ba","Torres"},
 				{"Reina","Enrique","Agger","Skrtel","Johnson","Henderson","Coutinho","Gerard","Downing","Sturridge","Suarez"},
 				{"Hart","Lescott","Richards","Kompany","Kolarov","Navas","Yaya","Nasri","Silva","Dzeko","Aguero"},
-				{"De Gea","Rafael","Smalling","Vidic","Evra","Valencia","Fletcher","Kagawa","Young","Rooney","Van Persie"}
+				{"De Gea","Rafael","Smalling","Vidic","Evra","Valencia","Fletcher","Kagawa","Young","Rooney","Van Persie"},
+				{"Pinto","Alves","Pique","Puyol","Alba","Busquets","Xavi","Iniesta","Pedro","Messi","Neymar"},
+				{"Casillas","Pepe","Ramos","Marcelo","Coentrao","Alonso","Ozil","Isco","Di Maria","Benzema","Ronaldo"},
+				{"Neuer","Boateng","Dante","Van Buyten","Lahm","Schweinsteiger","Goetze","Muller","Ribery","Madzukic","Robben"},
+				{"Weindenfeller","Schmelzer","Hummels","Subotic","Hornschuh","Bender","Reus","Mkhitaryan","Blaszczykowski","Lewandowski","Kirch"},
+				{"Douchez","Digne","Silva","Sakho","Marquinhos","Menez","Thiago","Veratti","Pastore","Cavani","Ibrahimovic"},
+				{"Buffon","De Ceglie","Chiellini","Bonucci","Barzagli","Pogba","Marchisio","Pirlo","Pepe","Tevez","Vucinic"}
 				};
 
 int[][] ovr={
 			{85,84,85,86,84,87,94,87,86,90,90},
+			{87,83,81,85,84,83,83,87,86,90,90},
+			{87,83,81,85,84,83,83,87,86,90,90},
+			{87,83,81,85,84,83,83,87,86,90,90},
+			{87,83,81,85,84,83,83,87,86,90,90},
+			{85,84,85,86,84,87,94,87,86,90,90},
+			{87,83,81,85,84,83,83,87,86,90,90},
 			{87,83,81,85,84,83,83,87,86,90,90},
 			{87,83,81,85,84,83,83,87,86,90,90},
 			{87,83,81,85,84,83,83,87,86,90,90},
@@ -56,7 +72,7 @@ Handler mainHandler;
 SharedPreferences prefs;
 
 //Dialog d;
-PlayerDatabase t[]=new PlayerDatabase[5] ;
+PlayerDatabase t[]=new PlayerDatabase[11] ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -101,7 +117,7 @@ PlayerDatabase t[]=new PlayerDatabase[5] ;
 					t[i].open();
 					t[i].deleteAll();
 					for(int j=0;j<11;j++){
-						//Log.d("Loop", pos[i][j]+name[i][j]+ovr[i][j]);
+						Log.d("Loop", pos[i][j]+name[i][j]+ovr[i][j]);
 						Log.d("Loop", i+" "+j);
 						t[i].insertData(pos[i][j], name[i][j], ovr[i][j]);
 					}						
@@ -118,10 +134,10 @@ PlayerDatabase t[]=new PlayerDatabase[5] ;
 										
 							pb.setProgress(i*25);
 							tvLoading.setText("LOADING DATABASES");
-							if(i==4)
+							if(i==10)
 								{
 								pb.setVisibility(View.INVISIBLE);
-								tvLoading.setText("SUCCESSFULLY LOADED");
+								tvLoading.setText("TOUCH HERE TO CONTINUE");
 								endIntro=true;
 								}
 							
@@ -176,7 +192,7 @@ PlayerDatabase t[]=new PlayerDatabase[5] ;
 	private void delay() {
 		// TODO Auto-generated method stub
 	try {
-		Thread.sleep(750);
+		Thread.sleep(500);
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

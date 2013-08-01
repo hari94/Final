@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -32,8 +34,11 @@ public class LeagueChooseTeam extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.league_choose_team_logo);
+		
 		bundle=getIntent().getExtras();
 		prefs = getSharedPreferences("MyPrefs", 0);
 		edit=prefs.edit();
@@ -66,13 +71,10 @@ public class LeagueChooseTeam extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent i=new Intent(LeagueChooseTeam.this,ChoosePlayers.class);
-				i.putExtra("season", bundle.getString("season"));			
-				startActivity(i);
-				finish();
+				
 			}
 		});
-		
+		b.setVisibility(View.INVISIBLE);
 
 	}
 
@@ -114,7 +116,12 @@ public class LeagueChooseTeam extends Activity implements OnClickListener {
 			edit.putInt("customId", R.drawable.custom10);
 			break;
 		}
+		
 		edit.commit();
+		Intent i=new Intent(LeagueChooseTeam.this,ChoosePlayers.class);
+		i.putExtra("season", bundle.getString("season"));			
+		startActivity(i);
+		finish();
 		
 		
 	}

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tile"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/tile"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/bKnockoutSimulate"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Simulate" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tile"
+                android:gravity="center"
+                android:text="B.Munich" />
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/tile"
+                android:gravity="center"
+                android:text="B.Dortmund" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line_vertical" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/line_vertical" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutChampions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/blank" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tile"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/tile"
+                android:gravity="center" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tile"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/tile"
+                android:gravity="center" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line_vertical" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/line_vertical" />
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam13"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvKnockoutTeam14"
+            android:layout_alignBottom="@+id/tvKnockoutTeam14"
+            android:layout_toRightOf="@+id/ivKnockoutLine3"
+            android:background="@drawable/tile"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam14"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="27dp"
+            android:layout_toLeftOf="@+id/ivKnockoutLine4"
+            android:background="@drawable/tile"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvKnockoutTeam13"
+            android:layout_alignLeft="@+id/tvKnockoutTeam13"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="21dp"
+            android:src="@drawable/line_vertical_very_short" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvKnockoutTeam13"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/tvKnockoutTeam14"
+            android:layout_marginRight="21dp"
+            android:src="@drawable/line_vertical_very_short" />
+
+        <TextView
+            android:id="@+id/tvKnockoutChampions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivKnockoutLine7"
+            android:layout_toLeftOf="@+id/ivKnockoutLine6"
+            android:layout_toRightOf="@+id/ivKnockoutLine5"
+            android:background="@drawable/tile"
+            android:gravity="center"
+            android:text="CHAMPIONS"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/tvKnockoutTeam13"
+            android:layout_below="@+id/tvKnockoutTeam13"
+            android:src="@drawable/line_vertical_very_short" />
+
+        <ImageView
+            android:id="@+id/ivKnockoutLine8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvKnockoutChampions"
+            android:layout_toLeftOf="@+id/ivKnockoutLine6"
+            android:src="@drawable/line_vertical_very_short" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam9"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tile"
+                android:gravity="center"
+                android:text="Juventus" />
+
+            <TextView
+                android:id="@+id/tvKnockoutTeam10"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/tile"
+                android:gravity="center"
+                android:text="PSG" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam11"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tile"
+            android:gravity="center"
+            android:text="Barcelona" />
+
+        <TextView
+            android:id="@+id/tvKnockoutTeam12"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/tile"
+            android:gravity="center"
+            android:text="RealMadrid" />
+    </RelativeLayout>
+
+</LinearLayout>

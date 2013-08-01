@@ -2,6 +2,7 @@ package com.delta.Final;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,8 @@ String s="";
 String seasonStatus;
 Bundle bundle;
 boolean itemclick=true;
+//SharedPreferences prefs;
+//SharedPreferences.Editor editor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ boolean itemclick=true;
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.choose_players);
 				
+		//prefs=getSharedPreferences("MyPrefs", 0);
+		
+		
 		tvBal=(TextView)findViewById(R.id.tvBalance);
 		tvPlayersRem=(TextView)findViewById(R.id.tvPlayersRemaining);
 		lvPlayers=(ListView)findViewById(R.id.lvChoosePlayers);
@@ -112,6 +118,8 @@ boolean itemclick=true;
 				add.open();
 				add.insertData(str[0], str[1], Integer.parseInt(str[2]));
 				Toast.makeText(this,"Added", Toast.LENGTH_SHORT).show();
+
+				
 				add.close();
 				ChoosePlayersDatabase del=new ChoosePlayersDatabase(this);
 				del.open();
@@ -145,9 +153,9 @@ boolean itemclick=true;
 		remove();
 		}
 		else{
-		Intent intent=new Intent(this,League.class);
-		
+		Intent intent=new Intent(this,League.class);		
 		startActivity(intent);
+		finish();
 		}
 	}
 

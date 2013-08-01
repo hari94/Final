@@ -23,6 +23,12 @@ public class PlayerDatabase {
 	private static final String DATABASE_TABLE_4 = "Liverpool";
 	private static final String DATABASE_TABLE_5 = "ManCity";
 	private static final String DATABASE_TABLE_6 = "MyTeam";
+	private static final String DATABASE_TABLE_7 = "Barcelona";
+	private static final String DATABASE_TABLE_8 = "RealMadrid";
+	private static final String DATABASE_TABLE_9 = "BMunich";
+	private static final String DATABASE_TABLE_10 = "BDortmund";
+	private static final String DATABASE_TABLE_11 = "PSG";
+	private static final String DATABASE_TABLE_12 = "Juventus";
 	private int DATABASE_VERSION = 1;
 	private static final String DATABASE_CREATE_1 = "CREATE TABLE "
 			+ DATABASE_TABLE_1 + " (" + KEY_ROWID
@@ -48,6 +54,31 @@ public class PlayerDatabase {
 			+ DATABASE_TABLE_6 + " (" + KEY_ROWID
 			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
 			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_7 = "CREATE TABLE "
+			+ DATABASE_TABLE_7 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_8 = "CREATE TABLE "
+			+ DATABASE_TABLE_8 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_9 = "CREATE TABLE "
+			+ DATABASE_TABLE_9 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_10 = "CREATE TABLE "
+			+ DATABASE_TABLE_10 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_11 = "CREATE TABLE "
+			+ DATABASE_TABLE_11 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+	private static final String DATABASE_CREATE_12 = "CREATE TABLE "
+			+ DATABASE_TABLE_12 + " (" + KEY_ROWID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_POSITION
+			+ " TEXT NOT NULL, " + KEY_NAME +" TEXT NOT NULL, "+ KEY_OVRLL + " INTEGER NOT NULL);";
+
 	public String DATABASE_TABLE;
 Context c;
 SQLiteDatabase db;
@@ -69,6 +100,12 @@ private class ContactClass extends SQLiteOpenHelper{
 		db.execSQL(DATABASE_CREATE_4);
 		db.execSQL(DATABASE_CREATE_5);
 		db.execSQL(DATABASE_CREATE_6);
+		db.execSQL(DATABASE_CREATE_7);
+		db.execSQL(DATABASE_CREATE_8);
+		db.execSQL(DATABASE_CREATE_9);
+		db.execSQL(DATABASE_CREATE_10);
+		db.execSQL(DATABASE_CREATE_11);
+		db.execSQL(DATABASE_CREATE_12);
 	}
 
 	@Override
@@ -80,6 +117,12 @@ private class ContactClass extends SQLiteOpenHelper{
 		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_4);
 		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_5);
 		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_6);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_7);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_8);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_9);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_10);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_11);
+		db.execSQL("DROP TABLE IF EXISTS "+DATABASE_TABLE_12);
 		onCreate(db);
 	}
 	

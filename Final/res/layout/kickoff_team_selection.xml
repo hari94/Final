@@ -9,13 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100" 
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/ivTeam1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="50"
+            
             android:src="@drawable/arsenal" />
 
         <ImageView
@@ -30,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100"
+        android:gravity="center" >
 
         <Spinner
             android:id="@+id/spinnerTeam1"
@@ -40,7 +43,8 @@
         <Spinner
             android:id="@+id/spinnerTeam2"
             android:layout_width="155dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            />
     </LinearLayout>
 
     <Button
